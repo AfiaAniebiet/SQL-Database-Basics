@@ -1,0 +1,75 @@
+-- CREATE DATABASE shop;
+-- creating table in MYSQL
+-- CREATE TABLE products (
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     product_name VARCHAR(255) NOT NULL,
+--     product_price INT NOT NULL,
+--     category ENUM(
+--         'Shoes',
+--         'Clothing',
+--         'Computer',
+--         'Electronics'
+--     ) NOT NULL,
+--     product_description TEXT NOT NULL,
+--     amount_in_stock INT,
+--     product_image VARCHAR(255),
+--     date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+-- INSERT INTO products (
+--         product_name,
+--         product_price,
+--         category,
+--         product_description,
+--         amount_in_stock,
+--         product_image
+--     )
+-- VALUES (
+--         'Lenovo G40-80',
+--         180000,
+--         'Computer',
+--         'An amazing Computer is superfast processing capacity',
+--         4,
+--         'https://lenovo-g40-80/image'
+--     );
+-- INSERT INTO products (
+--         product_name,
+--         product_price,
+--         category,
+--         product_description,
+--         amount_in_stock,
+--         product_image
+--     )
+-- VALUES (
+--         'Samsung Television',
+--         132000,
+--         'Electronics',
+--         'Crystal clear television for modern day activities. Brings the best comfort.',
+--         4,
+--         'https://samsung-latest/image'
+--     );
+-- CREATE TYPE product_category AS ENUM('Shoes', 'Clothing', 'Computer', 'Electronics');
+-- creating table in postgres
+-- CREATE TABLE products (
+--     id SERIAL PRIMARY KEY,
+--     product_name VARCHAR(255) NOT NULL,
+--     product_price INT NOT NULL,
+--     category product_category NOT NULL,
+--     product_description TEXT NOT NULL,
+--     amount_in_stock INT,
+--     product_image VARCHAR(255),
+--     date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+-- Updating table with constraints in postgres
+-- ALTER TABLE products
+-- ADD CONSTRAINT amount_in_stock_positive CHECK (amount_in_stock > 0),
+--     ALTER COLUMN amount_in_stock
+-- SET NOT NULL,
+--     ALTER COLUMN date_created
+-- SET NOT NULL;
+-- Updating table with constraints in MYSQL
+-- ALTER TABLE products
+-- MODIFY amount_in_stock INT NOT NULL,
+--     ADD CONSTRAINT amount_in_stock_positive CHECK (amount_in_stock > 0);
+-- UPDATE products
+-- SET date_created = DEFAULT
+-- WHERE id = 1;
